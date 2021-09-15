@@ -1,9 +1,9 @@
 <template>
   <div class="page">
-    <back-bar bgColor="#fdeded"/>
+    <back-bar bgColor="#fdeded" />
     <div class="list">
       <div class="list-item" v-for="item in productList" :key="item.id">
-        <div class="img"></div>
+        <el-image class="img" :src="item.thumb" fit="cover"></el-image>
         <div class="overlay">
           <div class="line">
             <div class="label">￥</div>
@@ -30,7 +30,7 @@ const productList = ref(products);
   .list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    // justify-content: center;
     padding-left: 20px;
     .list-item {
       width: 300px;
@@ -41,7 +41,6 @@ const productList = ref(products);
         width: 100%;
         height: 100%;
         vertical-align: top;
-        background: yellow;
       }
       .overlay {
         padding: 10px;
@@ -54,14 +53,18 @@ const productList = ref(products);
         .line {
           display: flex;
           align-items: center;
+          font-weight: 800;
           .label {
-            font-size: 14px;
-            color: $color-primary;
-          }
-          .value {
             font-size: 20px;
             color: $color-primary;
           }
+          .value {
+            font-size: 24px;
+            color: $color-primary;
+          }
+        }
+        .desc {
+          color: $color-fff;
         }
       }
     }

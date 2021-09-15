@@ -61,10 +61,6 @@ const handleClick = (link: string) => router.push(link);
         border-radius: 4px;
         position: relative;
         overflow: hidden;
-        // .img {
-        //   width: 100%;
-        //   height: 100%;
-        // }
         .content {
           width: 100%;
           height: 100%;
@@ -78,7 +74,7 @@ const handleClick = (link: string) => router.push(link);
           justify-content: center;
           align-items: center;
           color: #fff;
-          background: rgba(0, 0, 0, 0.3);
+          background: rgba(0, 0, 0, 0.4);
         }
       }
     }
