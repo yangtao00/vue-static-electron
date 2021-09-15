@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <back-bar />
+    <back-bar bgColor="#fdeded"/>
     <div class="list">
       <div class="list-item" v-for="item in productList" :key="item.id">
         <div class="img"></div>

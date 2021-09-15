@@ -33,6 +33,7 @@ const handleBack = () => {
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 1111;
   .icon {
     margin-right: 10px;
     font-size: 24px;

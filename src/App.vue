@@ -1,5 +1,7 @@
 <template>
-  <router-view />
+  <transition>
+    <router-view />
+  </transition>
 </template>
 <style lang="scss">
 * {
@@ -13,5 +15,14 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #333;
+}
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+.v-leave-from,
+.v-enter-to {
+  opacity: 1;
 }
 </style>
