@@ -1,7 +1,9 @@
 <template>
-  <transition name="fade">
-    <router-view />
-  </transition>
+  <router-view v-slot="{ Component }">
+    <transition name="fade">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 <style lang="scss">
 * {
@@ -26,6 +28,6 @@
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 2s ease;
+  transition: all 0.6s ease;
 }
 </style>

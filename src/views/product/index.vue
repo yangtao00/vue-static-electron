@@ -2,7 +2,12 @@
   <div class="page">
     <back-bar bgColor="#fdeded" />
     <div class="list">
-      <div class="list-item" v-for="item in productList" :key="item.id">
+      <div
+        class="list-item"
+        v-for="item in productList"
+        :key="item.id"
+        @click="handleClick(item.id)"
+      >
         <el-image class="img" :src="item.thumb" fit="cover"></el-image>
         <div class="overlay">
           <div class="line">
@@ -18,15 +23,25 @@
 <script setup lang="ts">
 import BackBar from '@/components/back-bar.vue';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import { products } from './constants';
 const productList = ref(products);
+const router = useRouter();
+const handleClick = (id: number | string) => {
+  router.push({
+    // path: '/product/detail',
+    // query: {
+    //   id,
+    // },
+    name: 'productDetail',
+    params: {
+      id,
+    },
+  });
+};
 </script>
 <style lang="scss" scoped>
 @import '@/styles/invariables.scss';
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
 .page {
   min-height: 100vh;
   background: #fdeded;
@@ -34,7 +49,8 @@ const productList = ref(products);
   .list {
     display: flex;
     flex-wrap: wrap;
-    // justify-content: center;
+    width: 980px;
+    margin: 0 auto;
     padding-left: 20px;
     .list-item {
       width: 300px;
@@ -57,7 +73,7 @@ const productList = ref(products);
         .line {
           display: flex;
           align-items: center;
-          font-weight: 800;
+          font-weight: 600;
           .label {
             font-size: 20px;
             color: $color-primary;
@@ -71,6 +87,11 @@ const productList = ref(products);
           color: $color-fff;
         }
       }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .list {
+      width: 660px;
     }
   }
 }

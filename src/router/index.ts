@@ -16,8 +16,9 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/product/index.vue'),
   },
   {
-    path: '/product/detail',
-    name: '商品详情',
+    path: '/product/detail/:id',
+    name: 'productDetail',
+    props: true,
     component: () => import('@/views/product/detail.vue'),
   },
 ];

@@ -11,6 +11,11 @@ const rondomImg = () => {
   return imageList[random];
 };
 
+export const findProductDetailById = (id: number): any => {
+  const item = products.filter(item => item.id === id);
+  return item[0];
+};
+
 export const products = [
   {
     id: 1,

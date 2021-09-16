@@ -1,13 +1,11 @@
 <template>
-  <div
-    class="back"
-    @click="handleBack"
-    :style="{ backgroundColor: props.bgColor }"
-  >
-    <el-icon size="24">
-      <back />
-    </el-icon>
-    <span>返回上一页</span>
+  <div class="back" :style="{ backgroundColor: props.bgColor }">
+    <div class="inner" @click="handleBack">
+      <el-icon :size="24">
+        <back />
+      </el-icon>
+      <span>返回上一页</span>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -28,12 +26,14 @@ const handleBack = () => {
   background: transparent;
   text-align: left;
   font-size: 20px;
-  display: flex;
-  align-items: center;
   position: sticky;
   top: 0;
   left: 0;
   z-index: 1111;
+  .inner {
+    display: flex;
+    align-items: center;
+  }
   .icon {
     margin-right: 10px;
     font-size: 24px;
