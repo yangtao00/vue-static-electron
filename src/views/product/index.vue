@@ -23,6 +23,10 @@ const productList = ref(products);
 </script>
 <style lang="scss" scoped>
 @import '@/styles/invariables.scss';
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 .page {
   min-height: 100vh;
   background: #fdeded;

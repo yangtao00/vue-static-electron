@@ -1,5 +1,5 @@
 <template>
-  <transition>
+  <transition name="fade">
     <router-view />
   </transition>
 </template>
@@ -16,13 +16,16 @@
   text-align: center;
   color: #333;
 }
-.v-enter-from,
-.v-leave-to {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
-
-.v-leave-from,
-.v-enter-to {
+.fade-leave-from,
+.fade-enter-to {
   opacity: 1;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 2s ease;
 }
 </style>

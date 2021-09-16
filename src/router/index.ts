@@ -1,6 +1,4 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import Home from '../views/home/index.vue'
-import Product from '../views/product/index.vue'
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -10,18 +8,23 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/home',
     name: '首页',
-    component: Home,
+    component: () => import('@/views/home/index.vue'),
   },
   {
     path: '/product',
     name: '商品',
-    component: Product,
+    component: () => import('@/views/product/index.vue'),
   },
-]
+  {
+    path: '/product/detail',
+    name: '商品详情',
+    component: () => import('@/views/product/detail.vue'),
+  },
+];
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
-})
+});
 
-export default router
+export default router;
