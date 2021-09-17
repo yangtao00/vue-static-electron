@@ -13,13 +13,21 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/product',
     name: '商品',
+    redirect: '/product/list',
     component: () => import('@/views/product/index.vue'),
-  },
-  {
-    path: '/product/detail/:id',
-    name: 'productDetail',
-    props: true,
-    component: () => import('@/views/product/detail.vue'),
+    children: [
+      {
+        path: 'list',
+        name: '商品',
+        component: () => import('@/views/product/list.vue'),
+      },
+      {
+        path: 'detail/:id',
+        name: 'productDetail',
+        props: true,
+        component: () => import('@/views/product/detail.vue'),
+      },
+    ],
   },
 ];
 
