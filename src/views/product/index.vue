@@ -13,5 +13,6 @@ import BackBar from '@/components/back-bar.vue';
   min-height: 100vh;
   background: #fdeded;
   padding: 0 0 50px;
+  overflow: scroll;
 }
 </style>

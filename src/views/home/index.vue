@@ -40,6 +40,7 @@ const handleClick = (link: string) => router.push(link);
     flex: 1;
   }
   .title {
+    text-align: center;
     font-size: 48px;
     margin-bottom: 50px;
   }

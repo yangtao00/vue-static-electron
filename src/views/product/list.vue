@@ -10,8 +10,13 @@
         <el-image class="img" :src="item.thumb" fit="cover"></el-image>
         <div class="overlay">
           <div class="line">
-            <div class="label">￥</div>
-            <div class="value">{{ item.price }}</div>
+            <div class="price">
+              <div class="label">￥</div>
+              <div class="value">{{ item.price }}</div>
+            </div>
+            <div v-if="item.originPrice" class="price">
+              <div class="price-del-value">{{ item.originPrice }}</div>
+            </div>
           </div>
           <div class="desc multi-ellipsis--2">{{ item.desc }}</div>
         </div>
@@ -59,7 +64,7 @@ const handleClick = (id: number | string) => {
       }
       .overlay {
         padding: 10px;
-        background: rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.2);
         position: absolute;
         left: 0;
         width: 300px;
@@ -69,6 +74,17 @@ const handleClick = (id: number | string) => {
           display: flex;
           align-items: center;
           font-weight: 600;
+          .price {
+            font-style: italic;
+            display: flex;
+            align-items: center;
+          }
+          .price-del-value {
+            margin-left: 10px;
+            text-decoration: line-through;
+            font-size: 18px;
+            color: $color-fff;
+          }
           .label {
             font-size: 20px;
             color: $color-primary;
